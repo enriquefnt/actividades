@@ -13,11 +13,15 @@ if (empty($_SESSION['name']))
 <!-- w3css -->
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel = "stylesheet" href = "https://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" type="text/css" href="../estilos/estilo_layout.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
  <script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script>
+
+
+
  <!-- jquery -->
  <script
 	src="https://code.jquery.com/jquery-3.3.1.min.js"

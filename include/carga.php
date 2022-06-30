@@ -18,10 +18,8 @@ $record = [
 							  'tipoParti' =>$_POST['tipoParti'],
 							  'total' =>  22 //$_POST['total']
 					];
-					print_r($record);
-					echo $_POST['locale'];
-					echo $_POST['titulo'];
-					echo $_POST['total'];
+			//		print_r($record);
+					
 
 insert($pdo, 'actividades', $record);
 session_unset();
