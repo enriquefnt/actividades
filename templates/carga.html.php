@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-</head>
-<body>
+<?php
+//if (empty($_SESSION['name']))
+//{session_start();}
+session_start();
+?>
+
+
+
+
 <div class="w3-row-padding">
-  
+  <?=$_SESSION['idUser'];?>
 
 <form class="w3-container" action="" method="post">
 
@@ -27,10 +28,14 @@
 </div>
 <div class="w3-half">
 
-<select name="aop" class="w3-input" >
-       <option hidden selected>Area Operativa</option>
-    <option value="2">Colonia Sana Rosa</option>
-    <option value="3">Iruyas</option>
+<select name="aop" required="required" class="w3-input">
+  <option hidden selected>Area Operativa</option>
+    <?php
+$aop = [];
+  foreach ($result as $aop) {
+ echo '<option value=' .  $aop['idaop'].'>' . $aop['areaoperativa'] .'</option>';
+  }
+?>
   </select>
 </div>
 <div class="w3-half">
@@ -78,11 +83,11 @@
 </div>
 
 <div class="w3-half">
-  <input type="number" required="required" class="w3-input" id="total" name="total" placeholder="Total de participantes estimados" autocomplete="off" value=""><br>
+  <input type="number" required="required" class="w3-input" id="total" name="total" placeholder="Total de participantes estimados" autocomplete="off" value="">
 
 
 <br>
-
+<input type="number" hidden  name="idUser"  value=<?=$_SESSION['idUser'];?>>
 
 <button type="submit" class="btn btn-primary" name="enviar">Enviar Información</button>
 
@@ -93,5 +98,3 @@
 </form>
 </div>
 
-</body>
-</html>

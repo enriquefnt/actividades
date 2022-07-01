@@ -21,7 +21,7 @@ $record = [
 			//		print_r($record);
 					
 
-insert($pdo, 'actividades', $record);
+insert($pdo, 'act_actividad', $record);
 session_unset();
 
 
@@ -29,11 +29,11 @@ session_unset();
 
 }
 
+$result = findAll($pdo, 'act_aop' ,'areaoperativa');
 
 
 
-
- $title = 'Carga Controles';
+ $title = 'Carga Actividad';
 ob_start();
 include __DIR__ . '/../templates/carga.html.php';
 $output = ob_get_clean() ;

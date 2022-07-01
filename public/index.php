@@ -20,8 +20,8 @@ session_start();
 
 		if($errMsg == '') {
 			try {
-			$stmt = $pdo->prepare('SELECT * FROM usuarios 
-				inner join aopzonas on `AOP` = `idaop`
+			$stmt = $pdo->prepare('SELECT * FROM act_usuarios 
+				inner join act_aop on `AOP` = `idaop`
 				WHERE usuario = :NomUsuario');
 				$stmt->execute(array(
 					':NomUsuario' => $NomUsuario

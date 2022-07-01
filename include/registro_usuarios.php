@@ -27,7 +27,7 @@ $registro = [
 
 
 
-insert ($pdo, 'usuarios', $registro);
+insert ($pdo, 'act_usuarios', $registro);
 //session_unset();
 //	 
 echo "<script >  
@@ -40,7 +40,7 @@ header('Location: /../actividades/include/registro_usuarios.php') ;
 
    
 
-$result = findAll($pdo, 'aopzonas' ,'areaoperativa');
+$result = findAll($pdo, 'act_aop' ,'areaoperativa');
  $title = 'Carga Usuarios';
  
 

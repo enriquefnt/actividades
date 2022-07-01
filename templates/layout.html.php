@@ -1,8 +1,4 @@
 
-<?php
-if (empty($_SESSION['name']))
-{session_start();}
-?>
 
 
 <!DOCTYPE html>
