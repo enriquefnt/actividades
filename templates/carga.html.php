@@ -8,7 +8,7 @@ session_start();
 
 
 <div class="w3-row-padding">
-  <?=$_SESSION['idUser'];?>
+ 
 
 <form class="w3-container" action="" method="post">
 
