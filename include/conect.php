@@ -18,7 +18,7 @@ $output = 'No se pudo conectar al servidor: '
 
 try {
 
-$pdo = new PDO('mysql:host=172.17.0.25;dbname=c0bdnutricion;charset=utf8', 'c0nutricion', 'uqwoNINT_3');
+$pdo = new PDO('mysql:host=172.17.0.25;dbname=c0bdnutricion;charset=utf8', 'c1nutricion', 'uqwoNINT_3');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 }
