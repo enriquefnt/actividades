@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html style="height:100%;">
+<html style=" height:100%;">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,11 +97,21 @@
 			<?=$output?>
 	</div>
 
+
+
+
+
+
+
+
+
 </main>
 
 <div class="w3-row-padding footer"  id="footer">
 	
 	<div class="w3-container w3-blue-grey  w3-center">
+
+
 <h5 > DNyAS - Programa: Promoción</h5>
 </div>
 </div>

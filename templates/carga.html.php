@@ -13,11 +13,11 @@ session_start();
 <form class="w3-container" action="" method="post">
 
 
-<input class="w3-input" type="text" name="titulo" placeholder="Título">
+<input class="w3-input" type="text" required="required" name="titulo" placeholder="Título">
 
 
 <div class="w3-half">
-<input class="w3-input" type="text" name="inicio" placeholder="Fecha inicial"
+<input class="w3-input" type="text" required="required" name="inicio" placeholder="Fecha inicial"
                     onfocus="(this.type='date')">
 
 </div>
@@ -87,7 +87,7 @@ $aop = [];
 
 
 <br>
-<input type="number" hidden  name="idUser"  value=<?=$_SESSION['idUser'];?>>
+<input type="hidden"   name="idUser"  value=<?=$_SESSION['idUser'];?>>
 
 <button type="submit" class="btn btn-primary" name="enviar">Enviar Información</button>
 
@@ -96,5 +96,6 @@ $aop = [];
 
 
 </form>
+
 </div>
 

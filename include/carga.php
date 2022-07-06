@@ -16,7 +16,8 @@ $record = [
 							  'areas' =>$_POST['areas'],
 							  'tipo' =>$_POST['tipo'],
 							  'tipoParti' =>$_POST['tipoParti'],
-							  'total' =>  22 //$_POST['total']
+							  'total' =>  $_POST['total'],
+							  'idUser'=>  $_POST['idUser']
 					];
 			//		print_r($record);
 					
