@@ -13,10 +13,10 @@ $record = [
 							  'titulo' =>$_POST['titulo'],
 							  'descri' =>$_POST['descri'],
 							  'tema' =>$_POST['tema'],
-							  'areas' =>$_POST['areas'],
-							  'tipo' =>$_POST['tipo'],
+							  'modal' =>$_POST['modal'],
 							  'tipoParti' =>$_POST['tipoParti'],
-							  'total' =>  22 //$_POST['total']
+							  'total' =>  $_POST['total'],
+							  'idUser'=>  $_POST['idUser']
 					];
 			//		print_r($record);
 					
@@ -25,13 +25,14 @@ insert($pdo, 'act_actividad', $record);
 session_unset();
 
 
-//header('Location: /../descu/includes/secargoCtrl.php')	;	 
+header('Location: /../actividades/include/carga.php')	;	 
 
 }
 
-$result = findAll($pdo, 'act_aop' ,'areaoperativa');
-
-
+$areas = findAll($pdo, 'act_aop' ,'areaoperativa');
+$temas = findAll($pdo, 'act_temas' ,'temas');
+$modalidades = findAll($pdo, 'act_modalidad' ,'modalidades');
+$participantes = findAll($pdo, 'act_participantes' ,'participantes');
 
  $title = 'Carga Actividad';
 ob_start();

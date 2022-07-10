@@ -13,11 +13,11 @@ session_start();
 <form class="w3-container" action="" method="post">
 
 
-<input class="w3-input" type="text" name="titulo" placeholder="Título">
+<input class="w3-input" type="text" required="required" name="titulo" placeholder="Título">
 
 
 <div class="w3-half">
-<input class="w3-input" type="text" name="inicio" placeholder="Fecha inicial"
+<input class="w3-input" type="text" required="required" name="inicio" placeholder="Fecha inicial"
                     onfocus="(this.type='date')">
 
 </div>
@@ -32,7 +32,7 @@ session_start();
   <option hidden selected>Area Operativa</option>
     <?php
 $aop = [];
-  foreach ($result as $aop) {
+  foreach ($areas as $aop) {
  echo '<option value=' .  $aop['idaop'].'>' . $aop['areaoperativa'] .'</option>';
   }
 ?>
@@ -43,51 +43,55 @@ $aop = [];
 </div>
 
 
-<input  type="text" class="w3-input" name="descri" placeholder="Descripción">
+<textarea   class="w3-input" name="descri" placeholder="Descripción"></textarea>
 
+
+<div class="w3-half">
+<select name="tema" required="required" class="w3-input">
+  <option hidden selected>Tema principal</option>
+    <?php
+$aop = [];
+  foreach ($temas as $tema) {
+ echo '<option value=' .  $tema['idTemas'].'>' . $tema['temas'] .'</option>';
+  }
+?>
+  </select>
+</div>
 
 
 
 <div class="w3-half">
-<select name="tema" class="w3-input">
-    <option hidden selected>Temas</option>
-    <option value="1">Lactancia</option>
-    <option value="2">Embarazo</option>
-    <option value="3">Adulto mayor</option>
+<select name="modal" required="required" class="w3-input">
+  <option hidden selected>Modalidad</option>
+    <?php
+$aop = [];
+  foreach ($modalidades as $modalidad) {
+ echo '<option value=' .  $modalidad['idModalidad'].'>' . $modalidad['modalidades'] .'</option>';
+  }
+?>
   </select>
 </div>
 
 <div class="w3-half">
-<select name="areas" class="w3-input">
-    <option hidden selected>Areas</option>
-    <option value="1">Salud Infantil</option>
-    <option value="2">Adultos mayores</option>
-    <option value="3">Alimentación Saludable</option>
+<select name="tipoParti" required="required" class="w3-input">
+  <option hidden selected>Grupo de participantes mayoritario</option>
+    <?php
+$aop = [];
+  foreach ($participantes as $participante) {
+ echo '<option value=' .  $participante['idParticipantes'].'>' . $participante['participantes'] .'</option>';
+  }
+?>
   </select>
 </div>
-<div class="w3-half">
-<select name="tipo"  class="w3-input">
-    <option hidden selected>Tipo</option>
-    <option value="1">Taller</option>
-    <option value="2">Concurso</option>
-    <option value="3">Gacebo</option>
-  </select>
-</div>
-<div class="w3-half">
-<select name="tipoParti" class="w3-input" >
-    <option hidden selected>Participantes</option>
-    <option value="1">Escolares</option>
-    <option value="2">Adolescentes</option>
-    <option value="3">General</option>
-  </select>
-</div>
+
+
 
 <div class="w3-half">
   <input type="number" required="required" class="w3-input" id="total" name="total" placeholder="Total de participantes estimados" autocomplete="off" value="">
 
 
 <br>
-<input type="number" hidden  name="idUser"  value=<?=$_SESSION['idUser'];?>>
+<input type="hidden"   name="idUser"  value=<?=$_SESSION['idUser'];?>>
 
 <button type="submit" class="btn btn-primary" name="enviar">Enviar Información</button>
 
@@ -96,5 +100,6 @@ $aop = [];
 
 
 </form>
+
 </div>
 

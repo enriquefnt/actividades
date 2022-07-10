@@ -1,3 +1,4 @@
+/*
 body {
   display: flex;
   flex-direction: column;
@@ -5,6 +6,59 @@ body {
  
   height: 100vh;
 }
+#footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 40px;
+            background: grey;
+        }
+
+*/
+body {
+  display: flex;
+  flex-direction: column;
+
+  /* you may want to set `height` of `html` and `body` to `100%` instead of this
+  https://developers.google.com/web/updates/2016/12/url-bar-resizing */
+  height: 100vh;
+}
+
+
+input[type="submit"] {
+    font-family: FontAwesome sans-serif;
+    display: inline-block;
+  position: relative;
+}
+
+
+.header, .footer {
+  flex: none;
+}
+
+.header > .w3-col {
+  width: 50%;
+}
+
+.table-container {
+  flex: auto;
+  min-height: 0;
+}
+
+.table-container > .w3-col, .table-container .w3-container {
+  height: 100%;
+}
+
+.table-container .w3-container {
+  overflow-y: scroll;
+}
+
+#dataTable {
+  border: 0;
+}
+
 #footer {
             position: fixed;
             padding: 10px 10px 0px 10px;

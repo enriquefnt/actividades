@@ -1,8 +1,12 @@
-
+<?php
+//if (empty($_SESSION['name']))
+//{session_start();}
+//session_start();
+?>
 
 
 <!DOCTYPE html>
-<html style="height:100%;">
+<html style=" height:100%;">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,14 +78,14 @@
 
 
   		<a href="../include/inicio.php" class="w3-bar-item w3-button">Inicio</a>
-		<a href="../include/carga.php"class="w3-bar-item w3-button">Carga Actividades
+		<a href="../include/carga.php"class="w3-bar-item w3-button">Carga Actividades</a>
 
 <?php 
 	if(isset($_SESSION['nombre']) && ($_SESSION['tipo']==1)) { ;?>
 	<a href="../include/registro_usuarios.php"class="w3-bar-item w3-button ">Registar Usuario</a></li>
 	<?php } ?>
 	
-
+	<a href="../include/listado.php"class="w3-bar-item w3-button">Listado</a>
 	<a href="../include/logout.php"class="w3-bar-item w3-button ">Salir</a></li>
 	
 </div>
@@ -97,11 +101,21 @@
 			<?=$output?>
 	</div>
 
+
+
+
+
+
+
+
+
 </main>
 
 <div class="w3-row-padding footer"  id="footer">
 	
 	<div class="w3-container w3-blue-grey  w3-center">
+
+
 <h5 > DNyAS - Programa: Promoción</h5>
 </div>
 </div>
