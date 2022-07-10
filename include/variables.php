@@ -8,19 +8,28 @@ include __DIR__ . '/../include/funciones.php';
 	$temas = findAll($pdo, 'act_temas' ,'temas');
 	$modalidades = findAll($pdo, 'act_modalidad' ,'modalidades');
 	$participantes = findAll($pdo, 'act_participantes' ,'participantes');
-	$paraborrar=$POST_
+	
+
+	
+
+
 try {
+if (isset($_POST['idTemas'])){
+	$paraborrar=$_GET['idTemas'];
+	$table='act_temas';
+	$primaryKey='idTemas';
+	$id=$_GET['idTemas'];;
 
-
-delete($pdo, $table, $primaryKey, $id )
-		
+delete($pdo, 'act_temas', 'idTemas', 3 );
+	
+}	
 
 
 	
 
 ob_start();
 
-	include __DIR__ . '/../templates/listado.html.php';
+	include __DIR__ . '/../templates/variables.html.php';
 
 $output = ob_get_clean() ;
 

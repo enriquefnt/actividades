@@ -29,12 +29,9 @@ session_start();
   <tr >
     
     
-    <td><?= htmlspecialchars($actividad['temas'], ENT_QUOTES, 'UTF-8'); ?></td>
-    <td><a href="variables.php?id=<?=$tema['idTemas']; ?>"><i class="fas fa-user-edit fa-lg"></i></a></td>
-    <td>
-    	<button type="submit" action=></button>
-    </td>
-
+    <td><?= htmlspecialchars($tema['temas'], ENT_QUOTES, 'UTF-8'); ?></td>
+    <td><a href="variables.php?idTemas=<?=$tema['idTemas']; ?>"><i class="fas fa-user-edit fa-lg"></i></a></td>
+    
 
 
    </tr>
