@@ -62,7 +62,7 @@ $aop = [];
 
 <div class="w3-half">
 <select name="modal" required="required" class="w3-input">
-  <option hidden selected>Modalidad</option>
+  <option hidden selected>Modalidad principal</option>
     <?php
 $aop = [];
   foreach ($modalidades as $modalidad) {
@@ -89,17 +89,30 @@ $aop = [];
 <div class="w3-half">
   <input type="number" required="required" class="w3-input" id="total" name="total" placeholder="Total de participantes estimados" autocomplete="off" value="">
 
+</div>
 
-<br>
 <input type="hidden"   name="idUser"  value=<?=$_SESSION['idUser'];?>>
-
+<br>
+<div class="w3-half">
 <button type="submit" class="btn btn-primary" name="enviar">Enviar Información</button>
+</div>
+</form>
+    <div  class="w3-half" id="content">
+        <form method="POST" action="" enctype="multipart/form-data">
+            
+                <input class="form-control" type="file" name="uploadfile" value="" />
+            </div>
+            
+                <button class="btn btn-primary" type="submit" name="upload">Cargar imágen</button>
+            </div>
+        </form>
+
+
+
+
+
 
 <br>
-    
-
-
-</form>
 
 </div>
 

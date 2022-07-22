@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-body {font-size: 0.9em;
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
   background-color: #ccc; 
   font-family: arial, helvetica, sans-serif;
   }

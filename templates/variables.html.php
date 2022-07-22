@@ -7,11 +7,11 @@ session_start();
 
   
   <div>
-  <table id="example" class="w3-table-all w3-tiny" > 
+  <table  class="w3-table-all w3-hoverable w3-tiny " > 
       
    
   <thead >
-  <tr >
+  <tr class="w3-light-grey">
     
     
     <th>Tema</th>

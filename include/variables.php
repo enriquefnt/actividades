@@ -14,14 +14,15 @@ include __DIR__ . '/../include/funciones.php';
 
 
 try {
-if (isset($_POST['idTemas'])){
+if (isset($_GET['idTemas'])){
 	$paraborrar=$_GET['idTemas'];
 	$table='act_temas';
 	$primaryKey='idTemas';
 	$id=$_GET['idTemas'];;
 
-delete($pdo, 'act_temas', 'idTemas', 3 );
+delete($pdo, 'act_temas', 'idTemas', $_GET['idTemas'] );
 	
+	unset($_GET['idTemas']);
 }	
 
 
