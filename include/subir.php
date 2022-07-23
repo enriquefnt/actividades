@@ -21,7 +21,7 @@ if (file_exists($target_file)) {
   echo "Sorry, file already exists.";
   $uploadOk = 0;
 }
-if ($_FILES["archivo"]["size"] > 6000000) {
+if ($_FILES["archivo"]["size"] > 2000000) {
   echo "El archivo es muy grande";
   $uploadOk = 0;
 }
@@ -32,13 +32,13 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 }
 
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
+  echo "No se pudo cargar la imágen";
 
 } else {
   if (move_uploaded_file($_FILES["archivo"]["tmp_name"], $target_file)) {
     echo "The file ". htmlspecialchars( basename( $_FILES["archivo"]["name"])). " has been uploaded.";
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    echo "Hubo un error al cargar la imágen, inente de nuevo.";
   }
 }
 
