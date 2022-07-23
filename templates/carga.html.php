@@ -95,16 +95,16 @@ $aop = [];
 <br>
 <div class="w3-half">
 <button type="submit" class="btn btn-primary" name="enviar">Enviar Información</button>
+<br><br>
 </div>
 </form>
     <div  class="w3-half" id="content">
-        <form method="POST" action="" enctype="multipart/form-data">
-            
-                <input class="form-control" type="file" name="uploadfile" value="" />
-            </div>
-            
-                <button class="btn btn-primary" type="submit" name="upload">Cargar imágen</button>
-            </div>
+        <form method="POST" action="subir.php" enctype="multipart/form-data">
+                <input class="form-control" type="file" name="archivo" id="archivo" >
+                <input class="form-control" hidden type="date" name="fecha" value="<?=date('Y-m-d');?>" >
+                <input class="form-control" hidden type="number" name="esetado" value=1 >
+           
+                 <input type="submit" value="Cargar imágen" name="submit">
         </form>
 
 
@@ -115,4 +115,6 @@ $aop = [];
 <br>
 
 </div>
+
+
 
