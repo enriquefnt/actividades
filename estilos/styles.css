@@ -1,22 +1,4 @@
-/*
-body {
-  display: flex;
-  flex-direction: column;
 
- 
-  height: 100vh;
-}
-#footer {
-            position: fixed;
-            padding: 10px 10px 0px 10px;
-            bottom: 0;
-            width: 100%;
-            /* Height of the footer*/ 
-            height: 40px;
-            background: grey;
-        }
-
-*/
 body {
   display: flex;
   flex-direction: column;
@@ -68,3 +50,15 @@ input[type="submit"] {
             height: 40px;
             background: grey;
         }
+
+::-webkit-input-placeholder { /* Edge */
+  color: black;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  color: black;
+}
+
+::placeholder {
+  color: black;
+}

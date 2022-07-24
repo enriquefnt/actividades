@@ -18,10 +18,10 @@ if(isset($_POST["submit"])) {
   }
 }
 if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
+  echo "El archivo ya exixte";
   $uploadOk = 0;
 }
-if ($_FILES["archivo"]["size"] > 2000000) {
+if ($_FILES["archivo"]["size"] > 3000000) {
   echo "El archivo es muy grande";
   $uploadOk = 0;
 }
