@@ -45,6 +45,7 @@
 
  <link rel="shortcut icon" type="image/x-icon" href="../public/favicon.ico">
 	<title><?=$title?></title>
+	
 </head>
 
 

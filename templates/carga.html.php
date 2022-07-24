@@ -100,9 +100,9 @@ $aop = [];
 </form>
     <div  class="w3-half" id="content">
         <form method="POST" action="subir.php" enctype="multipart/form-data">
-                <input class="form-control" type="file" name="archivo" id="archivo" >
+                <input class="form-control" type="file" multiple="multiple" name="archivo[]" id="archivo" >
                 <input class="form-control" hidden type="date" name="fecha" value="<?=date('Y-m-d');?>" >
-                <input class="form-control" hidden type="number" name="esetado" value=1 >
+                <input class="form-control" hidden type="number" name="estado" value=1 >
            
                  <input type="submit" value="Cargar imágen" name="submit">
         </form>

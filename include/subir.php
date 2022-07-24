@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
-
+/*
 $target_dir = "../imagenes/";
 $target_file = $target_dir . basename($_FILES["archivo"]["name"]);
 $uploadOk = 1;
@@ -42,8 +42,27 @@ if ($uploadOk == 0) {
   }
 }
 
+*/
 
-
+$files = array_filter($_FILES['archivo']['name']); //Use something similar before processing files.
+// Count the number of uploaded files in array
+$total_count = count($_FILES['archivo']['name']);
+// Loop through every file
+for( $i=0 ; $i < $total_count ; $i++ ) {
+   //The temp file path is obtained
+   $tmpFilePath = $_FILES['archivo']['tmp_name'][$i];
+   //A file path needs to be present
+   if ($tmpFilePath != ""){
+      //Setup our new file path
+      $newFilePath = "../imagenes/" . $_FILES['archivo']['name'][$i];
+      //File is uploaded to temp dir
+      if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+         //Other code goes here
+      	$uploadOk = 1;
+      }
+   }
+}
+echo $total_count . "  total_count   " . $tmpFilePath . "  tmpFilePath   " . $newFilePath . "  newFilePath" ;
 ?>
 
 
