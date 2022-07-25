@@ -3,6 +3,13 @@ include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
 try {
 
+$areas = findAll($pdo, 'act_aop' ,'areaoperativa');
+$temas = findAll($pdo, 'act_temas' ,'temas');
+$modalidades = findAll($pdo, 'act_modalidad' ,'modalidades');
+$participantes = findAll($pdo, 'act_participantes' ,'participantes');
+
+ $title = 'Carga Actividad';
+
 if (isset($_POST['inicio'])) {
 
 $record = [ 							
@@ -22,19 +29,38 @@ $record = [
 					
 
 insert($pdo, 'act_actividad', $record);
+
+$files = array_filter($_FILES['archivo']['name']); 
+$total_count = count($_FILES['archivo']['name']);
+
+for( $i=0 ; $i < $total_count ; $i++ ) {
+ 
+   $tmpFilePath = $_FILES['archivo']['tmp_name'][$i];
+
+   if ($tmpFilePath != ""){
+   
+      $newFilePath = "../imagenes/" . $_FILES['archivo']['name'][$i];
+      
+      if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+       
+      	$uploadOk = 1;
+      }
+   }
+}
+
+
+
 session_unset();
-
-
 header('Location: /../actividades/include/carga.php')	;	 
 
 }
 
-$areas = findAll($pdo, 'act_aop' ,'areaoperativa');
-$temas = findAll($pdo, 'act_temas' ,'temas');
-$modalidades = findAll($pdo, 'act_modalidad' ,'modalidades');
-$participantes = findAll($pdo, 'act_participantes' ,'participantes');
 
- $title = 'Carga Actividad';
+
+
+
+
+
 ob_start();
 include __DIR__ . '/../templates/carga.html.php';
 $output = ob_get_clean() ;

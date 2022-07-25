@@ -10,7 +10,7 @@ session_start();
 <div class="w3-row-padding">
  
 
-<form class="w3-container" action="" method="post">
+<form class="w3-container" action="" method="post" enctype="multipart/form-data">
 
 
 <input class="w3-input" type="text" required="required" name="titulo" placeholder="Título">
@@ -93,26 +93,19 @@ $aop = [];
 
 <input type="hidden"   name="idUser"  value=<?=$_SESSION['idUser'];?>>
 <br>
-<div class="w3-half">
-<button type="submit" class="btn btn-primary" name="enviar">Enviar Información</button>
-<br><br>
-</div>
-</form>
+
+
     <div  class="w3-half" id="content">
-        <form method="POST" action="subir.php" enctype="multipart/form-data">
-                <input class="form-control" type="file" multiple="multiple" name="archivo[]" id="archivo" >
-                <input class="form-control" hidden type="date" name="fecha" value="<?=date('Y-m-d');?>" >
-                <input class="form-control" hidden type="number" name="estado" value=1 >
-           
-                 <input type="submit" value="Cargar imágen" name="submit">
-        </form>
+       <br>
+       <label class="custom-file-label" for="archivo">Subir fotos</label>
+                <input class="custom-file-input" type="file" multiple="multiple" name="archivo[]" id="archivo" placeholder="Puede subir hasta 3 fotos">
+                <input  hidden type="date" name="fecha" value="<?=date('Y-m-d');?>" >
+                <input  hidden type="number" name="estado" value=1 >
+  <br><br>         
+<div class="w3-half">
+<button type="submit" class="btn btn-primary" name="submit">Enviar Información</button>
 
-
-
-
-
-
-<br>
+</div>
 
 </div>
 
