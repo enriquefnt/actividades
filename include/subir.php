@@ -44,10 +44,10 @@ if ($uploadOk == 0) {
 
 */
 
-//$files = array_filter($_FILES['archivo']['name']); //Use something similar before processing files.
+$files = array_filter($_FILES['archivo']['name']); //Use something similar before processing files.
 // Count the number of uploaded files in array
 $total_count = count($_FILES['archivo']['name']);
-// Loop through every file
+// Loop through every file 
 for( $i=0 ; $i < $total_count ; $i++ ) {
    //The temp file path is obtained
    $tmpFilePath = $_FILES['archivo']['tmp_name'][$i];

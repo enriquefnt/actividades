@@ -2,6 +2,8 @@
 //if (empty($_SESSION['name']))
 //{session_start();}
 session_start();
+
+
 ?>
 
 
