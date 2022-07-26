@@ -46,17 +46,19 @@ for( $i=0 ; $i < $total_count ; $i++ ) {
       if(move_uploaded_file($tmpFilePath, $newFilePath)) {
        
        $sql='SELECT max(idActividad)  FROM `saltaped_actividades-promo`.act_actividad;';
-       $ultimoId = $pdo->query($sql);
+ 
+  $ultimoId = $pdo->query($sql);
+  $ult = $ultimoId->fetch();
 
 
       	$datosImagen =[
       		'archivo'=> $newFilePath ,
-      	//	'idActividad' => $ultimoId[0] ,
-      		'fecha' => '2022-01-01',
+      		'idActividad' => $ult[0] ,
+      		'fecha' => date('Y-m-d') ,
 					'estado' => 1
       	];
 
-//insert($pdo, 'act_imagenes', $datosImagen);
+ insert($pdo, 'act_imagenes', $datosImagen);
 
       	$uploadOk = 1;
       }

@@ -4,6 +4,7 @@ session_start();
 
 <body>
 
+
   
   <div>
   <table id="example" class="w3-table-all w3-tiny" > 
@@ -27,6 +28,12 @@ session_start();
   <?php 
 
   
+
+
+
+
+
+
   foreach ($actividades as $actividad): ?>
   <tr >
     <td ><?= htmlspecialchars($actividad['Fecha'], ENT_QUOTES, 'UTF-8'); ?></td>
