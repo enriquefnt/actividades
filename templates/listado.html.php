@@ -21,6 +21,7 @@ session_start();
     <th>Participantes</th>
     <th>Referente</th>
     <th>Descripción</th>
+    <th>Editar</th>
    </tr>
   </thead>
   <tbody class="table-hover">
@@ -45,6 +46,9 @@ session_start();
     
      <td><?= htmlspecialchars($actividad['referente'], ENT_QUOTES, 'UTF-8'); ?></td>
     <td><?= htmlspecialchars($actividad['descri'], ENT_QUOTES, 'UTF-8'); ?></td>
+   <td><a href="editaActividad.php?id=<?=$caso['idPersona']; ?>"><i class="fas fa-user-edit fa-lg"></i></a></td>
+     
+       
    </tr>
   <?php endforeach; ?>
   </tbody>

@@ -34,7 +34,10 @@ insert($pdo, 'act_actividad', $record);
 
 $files = array_filter($_FILES['archivo']['name']); 
 $total_count = count($_FILES['archivo']['name']);
-
+$sql='SELECT max(idActividad)  FROM `saltaped_actividades-promo`.act_actividad;';
+ 
+ $ultimoId = $pdo->query($sql);
+  $ult = $ultimoId->fetch();
 for( $i=0 ; $i < $total_count ; $i++ ) {
  
    $tmpFilePath = $_FILES['archivo']['tmp_name'][$i];
@@ -45,10 +48,7 @@ for( $i=0 ; $i < $total_count ; $i++ ) {
       
       if(move_uploaded_file($tmpFilePath, $newFilePath)) {
        
-       $sql='SELECT max(idActividad)  FROM `saltaped_actividades-promo`.act_actividad;';
- 
-  $ultimoId = $pdo->query($sql);
-  $ult = $ultimoId->fetch();
+       
 
 
       	$datosImagen =[
