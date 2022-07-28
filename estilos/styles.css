@@ -8,7 +8,7 @@ body {
   height: 100vh;
 }
 
-
+/*
 input[type="submit"] {
     font-family: FontAwesome sans-serif;
     display: inline-block;
@@ -40,7 +40,7 @@ input[type="submit"] {
 #dataTable {
   border: 0;
 }
-
+*/
 #footer {
             position: fixed;
             padding: 10px 10px 0px 10px;
@@ -51,13 +51,7 @@ input[type="submit"] {
             background: grey;
         }
 
-::-webkit-input-placeholder { /* Edge */
-  color: black;
-}
 
-:-ms-input-placeholder { /* Internet Explorer */
-  color: black;
-}
 
 ::placeholder {
   color: black;

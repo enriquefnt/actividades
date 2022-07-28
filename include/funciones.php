@@ -81,8 +81,8 @@ function update($pdo, $table, $primaryKey, $fields) {
 
 	$query .= ' WHERE `' . $primaryKey . '` = :primaryKey';
 
-	//Set the :primaryKey variable
-	$fields['primaryKey'] = $fields['id'];
+	//Set the :primaryKey variable --- Aca modifique el valor de fields para que ande
+	$fields['primaryKey'] = $fields['idActividad'];
 
 	$fields = processDates($fields);
 

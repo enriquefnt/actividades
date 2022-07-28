@@ -29,7 +29,10 @@ $record = [
 					
 
 insert($pdo, 'act_actividad', $record);
-
+$sql='SELECT max(idActividad)  FROM `saltaped_actividades-promo`.act_actividad;';
+ 
+  $ultimoId = $pdo->query($sql);
+  $ult = $ultimoId->fetch();
 
 
 $files = array_filter($_FILES['archivo']['name']); 
@@ -45,13 +48,7 @@ for( $i=0 ; $i < $total_count ; $i++ ) {
       
       if(move_uploaded_file($tmpFilePath, $newFilePath)) {
        
-       $sql='SELECT max(idActividad)  FROM `saltaped_actividades-promo`.act_actividad;';
- 
-  $ultimoId = $pdo->query($sql);
-  $ult = $ultimoId->fetch();
-
-
-      	$datosImagen =[
+         	$datosImagen =[
       		'archivo'=> $newFilePath ,
       		'idActividad' => $ult[0] ,
       		'fecha' => date('Y-m-d') ,
@@ -74,10 +71,6 @@ header('Location: /../actividades/include/carga.php')	;
 
 
 
-
-
-
-
 ob_start();
 include __DIR__ . '/../templates/carga.html.php';
 $output = ob_get_clean() ;
@@ -91,13 +84,7 @@ $output = ob_get_clean() ;
     }
 	
 
-
-
-
-
-//
-
 		include  __DIR__ . '/../templates/layout.html.php';
 
-//header('Location: vercontrol.php')	;	
+
 
