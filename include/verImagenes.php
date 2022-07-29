@@ -4,18 +4,18 @@ include __DIR__ . '/../include/funciones.php';
 
 try {
 
-if (isset($_POST['idActividad'])) {
+if (isset($_GET['id'])) {
 	
 //$imagenesActividad = findById($pdo, 'act_imagenes', 'idImagenes', $_POST['idActividad']);
 
 
-$sql='call `saltaped_actividades-promo`.fotosActividad(141);';
+$sql='call fotosActividad('.$_GET["id"].');';
 
 $imagenesActividad = $pdo->query($sql);
 
 
-
 }
+
 
 $title = 'Fotos';
 
@@ -36,3 +36,5 @@ catch (PDOException $e) {
 }
 
 include  __DIR__ . '/../templates/layout.html.php';
+
+

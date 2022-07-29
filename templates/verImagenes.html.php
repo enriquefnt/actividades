@@ -2,48 +2,37 @@
 session_start();
 ?>
 
+<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
 
+<?php
 
-<!-- Carousel -->
-<div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-  
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-	
-	<div class="carousel-item active">
-      <img src="../imagenes/caratulaFotos.jpg"  class="d-block" style="width:1%">
-    </div>
-  
-  <?php 
  
-
-  foreach ($imagenesActividad as $imagen): ?>
-    
-    <div class="carousel-item ">
-      <img src="<?= htmlspecialchars($imagen['archivo'], ENT_QUOTES, 'UTF-8'); ?>"  class="d-block" style="width:100%">
-    </div>
-    
+foreach ($imagenesActividad as $imagen):  ?>
+ <div class="w3-container ">
+ <img class="mySlides" src="<?= htmlspecialchars($imagen['archivo'], ENT_QUOTES, 'UTF-8'); ?>"style="width:80%">
+ </div>
 <?php endforeach; ?>
-  </div>
-  
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
 
-<div class="container-fluid mt-3">
-  
-</div>
+<div class="w3-row-padding">
+<h4>Evento: <?= htmlspecialchars($imagen['titulo'], ENT_QUOTES, 'UTF-8'); ?></h4></div>
 
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
 
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>

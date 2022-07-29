@@ -8,7 +8,8 @@ session_start();
   
   <div>
   <table id="example" class="w3-table-all w3-tiny" > 
-      
+    <?php   
+  if ( isset($cuenta) && $cuenta > 0) { ?>    
    
   <thead >
   <tr >
@@ -26,6 +27,12 @@ session_start();
    <th>Editar</th> 
    </tr>
   </thead>
+
+   <?php  }  
+else {  ?>
+  <h5>Sin Actividad Registrada </h5>
+<?php }  ?>
+
   <tbody class="table-hover">
   
   <?php 

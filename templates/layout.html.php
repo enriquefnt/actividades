@@ -21,7 +21,7 @@
  <!--  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
  <script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script>
 
-
+<script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
 
  <!-- jquery -->
  <script
