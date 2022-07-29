@@ -37,9 +37,16 @@ else {  ?>
   
   <?php 
 
-  
+  foreach ($actividades as $actividad): 
+    if ($actividad['idUser']==$_SESSION['idUser'] 
 
-  foreach ($actividades as $actividad): ?>
+      || $_SESSION['tipo']== 1
+
+      || ($_SESSION['tipo']== 0 && $_SESSION['AOP']== $actividad['aop'])
+
+  ) {  
+
+   ?>
   <tr >
     <td ><?= htmlspecialchars($actividad['Fecha'], ENT_QUOTES, 'UTF-8'); ?></td>
     <td><?= htmlspecialchars($actividad['areaoperativa'], ENT_QUOTES, 'UTF-8'); ?></td>
@@ -55,7 +62,7 @@ else {  ?>
   <td><a href="editaDatos.php?id=<?=$actividad['idActividad']; ?>"><i class="fas fa-user-edit fa-lg"></i></a></td>  
     </td> 
    </tr>
-  <?php endforeach; ?>
+  <?php } endforeach; ?>
   </tbody>
          
     </table>
