@@ -5,7 +5,11 @@ session_start();
 
 
 ?>
+<div class="w3-row-padding">
 
+<h5>Datos de la actividad</h5>
+
+</div>
 
 
 
@@ -108,7 +112,11 @@ $aop = [];
 <button type="submit" class="btn btn-primary" name="submit">Enviar Información</button>
 
 </div>
+<div class="w3-row-padding">
 
+
+<p align="right">* Evite cargar mas de 3 fotos o fotos muy grandes</p>
+</div>
 </div>
 
 

@@ -5,7 +5,11 @@ session_start();
 
 
 ?>
+<div class="w3-row-padding">
 
+<h5>Edición de datos</h5>
+
+</div>
 
 
 
@@ -92,7 +96,7 @@ $aop = [];
 
 </div>
 
-<input type="hidden"   name="idUser"  value=<?=$_SESSION['idUser'];?>>
+<input type="hidden"   name="idUser"  value=<?=$actiAEditar['idUser'];?>>
 <br>
 
 
@@ -109,6 +113,10 @@ $aop = [];
 </div>
 
 </div>
+<div class="w3-row-padding">
 
+
+<p align="right">* Evite cargar mas de 3 fotos o fotos muy grandes</p>
+</div>
 
 

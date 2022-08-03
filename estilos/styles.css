@@ -63,6 +63,12 @@ input[type="submit"] {
 * {margin: 0; padding: 0;}
 body {background: #ccc;}
 
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
 .slider{
   width: 640px; /*Same as width of the large image*/
   position: relative;

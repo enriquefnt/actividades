@@ -10,12 +10,15 @@ session_start();
  
 foreach ($imagenesActividad as $imagen):  ?>
  <div class="w3-container ">
- <img class="mySlides" src="<?= htmlspecialchars($imagen['archivo'], ENT_QUOTES, 'UTF-8'); ?>"style="width:80%">
+ <img class="mySlides" src="<?= htmlspecialchars($imagen['archivo'], ENT_QUOTES, 'UTF-8'); ?>"  style="width:80%">
  </div>
 <?php endforeach; ?>
 
 <div class="w3-row-padding">
 <h4>Evento: <?= htmlspecialchars($imagen['titulo'], ENT_QUOTES, 'UTF-8'); ?></h4></div>
+
+
+
 
 <script>
 var slideIndex = 1;

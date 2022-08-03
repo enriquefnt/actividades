@@ -57,7 +57,17 @@ else {  ?>
     <td><?= htmlspecialchars($actividad['participantes'], ENT_QUOTES, 'UTF-8'); ?></td>
     <td><?= htmlspecialchars($actividad['referente'], ENT_QUOTES, 'UTF-8'); ?></td>
     <td><?= htmlspecialchars($actividad['descri'], ENT_QUOTES, 'UTF-8'); ?></td>
+    
+    <?php
+    if ($actividad['tienefoto'] == 1){ ?>
     <td><a href="verImagenes.php?id=<?=$actividad['idActividad']; ?>"><i class="fas fa-solid fa-images"></i></a></td>  
+    <?php 
+        } else{  ?>
+    <td> - </td>     
+      <?php  } ?>
+
+
+
     </td> 
   <td><a href="editaDatos.php?id=<?=$actividad['idActividad']; ?>"><i class="fas fa-user-edit fa-lg"></i></a></td>  
     </td> 

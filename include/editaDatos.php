@@ -26,7 +26,7 @@ if (isset($_POST['inicio'])) {
 							 'total' =>  $_POST['total'],
 							 'idUser'=>  $_POST['idUser']
 					];
-				print_r($actiEditada);
+				
 
 save($pdo, 'act_actividad', 'idActividad', $actiEditada);
 
@@ -72,7 +72,7 @@ header('Location: /../actividades/include/listado.php')	;
 
 if (isset($_GET['id'])) {
 	
-	//$query = $pdo->prepare('call saltaped_relbas.persona_id('.$_GET['id'].')');
+	
 
 	$query = $pdo->prepare('call `saltaped_actividades-promo`.paraEditar('.$_GET['id'].');');
     	$query->execute();

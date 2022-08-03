@@ -48,7 +48,12 @@
 
 <!-- datatables-datetime -->
 
+<style>
 
+::placeholder {
+  color: black;
+}
+</style>
 
  <link rel="shortcut icon" type="image/x-icon" href="../public/favicon.ico">
 	<title><?=$title?></title>
