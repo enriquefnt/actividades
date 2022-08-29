@@ -10,7 +10,9 @@ $pdo = new PDO('mysql:host=212.1.210.51;dbname=saltaped_actividades-promo;charse
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+$pdo_ub = new PDO('mysql:host=212.1.210.51;dbname=saltaped_actividades-promo;charset=utf8', 'saltaped_descu', 'descu12#');
 
+$pdo_ub->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 }
 

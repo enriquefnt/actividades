@@ -18,8 +18,11 @@
 <link rel="stylesheet" type="text/css" href="../estilos/estilo_layout.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
- <!--  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
- <script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous"></script>
+
+ <script src="https://kit.fontawesome.com/07598e026b.js" crossorigin="anonymous">
+
+
+ </script>
 
 <script src="http://thecodeplayer.com/uploads/js/prefixfree.js" type="text/javascript"></script>
 
@@ -48,12 +51,6 @@
 
 <!-- datatables-datetime -->
 
-<style>
-
-::placeholder {
-  color: black;
-}
-</style>
 
  <link rel="shortcut icon" type="image/x-icon" href="../public/favicon.ico">
 	<title><?=$title?></title>
@@ -91,7 +88,7 @@
 <div class="w3-bar w3-border w3-light-grey">
 
 
-  		<a href="../include/inicio.php" class="w3-bar-item w3-button">Inicio</a>
+  		<a href="../include/inicio.php" class="w3-bar-item w3-button">Instructivo</a>
 		<a href="../include/carga.php"class="w3-bar-item w3-button">Carga Actividades</a>
 
 <?php 

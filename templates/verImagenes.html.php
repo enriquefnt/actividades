@@ -10,7 +10,7 @@ session_start();
  
 foreach ($imagenesActividad as $imagen):  ?>
  <div class="w3-container ">
- <img class="mySlides" src="<?= htmlspecialchars($imagen['archivo'], ENT_QUOTES, 'UTF-8'); ?>"  style="width:80%">
+ <img class="mySlides" src="<?= htmlspecialchars($imagen['archivo'], ENT_QUOTES, 'UTF-8'); ?>"  style="width:60%">
  </div>
 <?php endforeach; ?>
 

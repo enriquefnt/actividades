@@ -24,7 +24,8 @@ session_start();
     <th>Referente</th>
     <th>Descripción</th>
     <th>Ver Fotos</th>
-   <th>Editar</th> 
+    <th>Para imprimir</th>
+    <th>Editar</th> 
    </tr>
   </thead>
 
@@ -58,6 +59,7 @@ else {  ?>
     <td><?= htmlspecialchars($actividad['referente'], ENT_QUOTES, 'UTF-8'); ?></td>
     <td><?= htmlspecialchars($actividad['descri'], ENT_QUOTES, 'UTF-8'); ?></td>
     
+  
     <?php
     if ($actividad['tienefoto'] == 1){ ?>
     <td><a href="verImagenes.php?id=<?=$actividad['idActividad']; ?>"><i class="fas fa-solid fa-images"></i></a></td>  
@@ -65,10 +67,11 @@ else {  ?>
         } else{  ?>
     <td> - </td>     
       <?php  } ?>
-
-
-
     </td> 
+
+    <td><a href="pdf_informe.php?id=<?=$actividad['idActividad']; ?>"><i class="fa-solid fa-file-pdf"></i></i></a></td>  
+      </td> 
+    
   <td><a href="editaDatos.php?id=<?=$actividad['idActividad']; ?>"><i class="fas fa-user-edit fa-lg"></i></a></td>  
     </td> 
    </tr>
