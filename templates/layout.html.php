@@ -94,6 +94,7 @@
 <?php 
 	if(isset($_SESSION['nombre']) && ($_SESSION['tipo']==1)) { ;?>
 	<a href="../include/registro_usuarios.php"class="w3-bar-item w3-button ">Registar Usuario</a></li>
+	<a href="../include/tabla_aop.php"class="w3-bar-item w3-button ">Ver por AOP</a></li>
 	<?php } ?>
 	
 	<a href="../include/listado.php"class="w3-bar-item w3-button">Listado</a>
