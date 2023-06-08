@@ -33,7 +33,7 @@ insert ($pdo, 'act_usuarios', $registro);
 echo "<script >  
              alert('Se ha cargado el usuario ');  
       </script>";
-header('Location: /../actividades/include/registro_usuarios.php') ;
+header('Location: /../actividades/includes/registro_usuarios.php') ;
 }
 
 

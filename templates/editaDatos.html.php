@@ -7,7 +7,7 @@ session_start();
 ?>
 <div class="w3-row-padding">
 
-<h5>Datos de la actividad</h5>
+<h5>Edición de datos</h5>
 
 </div>
 
@@ -16,26 +16,25 @@ session_start();
 <div class="w3-row-padding">
  
 
-<form class="w3-container" action="" method="post" enctype="multipart/form-data">
+<form class="w3-container" action="editaDatos.php" method="post" enctype="multipart/form-data">
 
+<input type="hidden" name="idActividad" value=<?=$actiAEditar['idActividad'] ?? ''?> > 
 
-<input class="w3-input" type="text" required="required" name="titulo" placeholder="Título">
+<input class="w3-input" type="text" required="required" name="titulo" placeholder="Título" value="<?=$actiAEditar['titulo'] ?? ''?>">
 
 
 <div class="w3-half">
-<input class="w3-input" type="text" required="required" name="inicio" placeholder="Fecha inicial"
-                    onfocus="(this.type='date')">
+<input class="w3-input" type="text" required="required" name="inicio" placeholder="Fecha inicial" onfocus="(this.type='date')" value="<?=$actiAEditar['inicio'] ?? ''?>">
 
 </div>
 <div class="w3-half">
-<input class="w3-input" type="text" name="final" placeholder="Fecha final"
-                    onfocus="(this.type='date')">
+<input class="w3-input" type="text" name="final" placeholder="Fecha final"  onfocus="(this.type='date')" value="<?=$actiAEditar['final'] ?? ''?>">
 
 </div>
 <div class="w3-half">
 
 <select name="aop" required="required" class="w3-input">
-  <option hidden selected>Area Operativa</option>
+  <option value="<?=$actiAEditar['aop'] ?? ''?>" selected><?=$actiAEditar['areaoperativa'] ?? ''?></option>
     <?php
 $aop = [];
   foreach ($areas as $aop) {
@@ -45,16 +44,16 @@ $aop = [];
   </select>
 </div>
 <div class="w3-half">
-<input  type="text" name="locale" class="w3-input" placeholder="Lugar">
+<input  type="text" name="locale" class="w3-input" placeholder="Lugar" value="<?=$actiAEditar['locale'] ?? ''?>">
 </div>
 
 
-<textarea   class="w3-input" name="descri" placeholder="Descripción"></textarea>
+<textarea   class="w3-input" name="descri"  ><?=$actiAEditar['descri'] ?? ''?></textarea>
 
 
 <div class="w3-half">
 <select name="tema" required="required" class="w3-input">
-  <option hidden selected>Tema principal</option>
+  <option value="<?=$actiAEditar['tema'] ?? ''?>" selected><?=$actiAEditar['temas'] ?? ''?></option>
     <?php
 $aop = [];
   foreach ($temas as $tema) {
@@ -67,8 +66,8 @@ $aop = [];
 
 
 <div class="w3-half">
-<select name="modal" required="required" class="w3-input">
-  <option hidden selected>Modalidad principal</option>
+  <select name="modal"  id="modal" required="required" class="w3-input">
+  <option value="<?=$actiAEditar['modal'] ?? ''?>" selected><?=$actiAEditar['modalidades'] ?? ''?></option>
     <?php
 $aop = [];
   foreach ($modalidades as $modalidad) {
@@ -80,7 +79,7 @@ $aop = [];
 
 <div class="w3-half">
 <select name="tipoParti" required="required" class="w3-input">
-  <option hidden selected>Grupo de participantes mayoritario</option>
+  <option value="<?=$actiAEditar['tipoParti'] ?? ''?>" selected><?=$actiAEditar['participantes'] ?? ''?></option>
     <?php
 $aop = [];
   foreach ($participantes as $participante) {
@@ -93,11 +92,11 @@ $aop = [];
 
 
 <div class="w3-half">
-  <input type="number" required="required" class="w3-input" id="total" name="total" placeholder="Total de participantes estimados" autocomplete="off" value="">
+  <input type="number" required="required" class="w3-input" id="total" name="total" placeholder="Total de participantes estimados" autocomplete="off" value=<?=$actiAEditar['total'] ?? ''?>>
 
 </div>
 
-<input type="hidden"   name="idUser"  value=<?=$_SESSION['idUser'];?>>
+<input type="hidden"   name="idUser"  value=<?=$actiAEditar['idUser'];?>>
 <br>
 
 
@@ -109,7 +108,9 @@ $aop = [];
                 <input  hidden type="number" name="estado" value=1 >
   <br><br>         
 <div class="w3-half">
-<button type="submit" class="btn btn-primary" name="submit">Enviar Información</button>
+<button type="submit" class="btn btn-primary" name="submit">Guardar cambios</button>
+
+</div>
 
 </div>
 <div class="w3-row-padding">
@@ -117,7 +118,5 @@ $aop = [];
 
 <p align="right">* Evite cargar mas de 3 fotos o fotos muy grandes</p>
 </div>
-</div>
-
 
 
