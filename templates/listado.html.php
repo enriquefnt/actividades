@@ -72,7 +72,7 @@ else {  ?>
     <td><a href="pdf_informe.php?id=<?=$actividad['idActividad']; ?>"><i class="fa-solid fa-file-pdf"></i></i></a></td>  
       </td> 
     
-  <td><a href="editaDatos.php?id=<?=$actividad['idActividad']; ?>"><i class="fas fa-user-edit fa-lg"></i></a></td>  
+  <td><a href="editaDatos.php?id=<?=$actividad['idActividad']; ?>" target="_blank"><i class="fas fa-user-edit fa-lg"></i></a></td>  
     </td> 
    </tr>
   <?php } endforeach; ?>

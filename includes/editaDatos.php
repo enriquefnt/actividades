@@ -1,6 +1,6 @@
 <?php
-include __DIR__ . '/../include/conect.php';
-include __DIR__ . '/../include/funciones.php';
+include __DIR__ . '/../includes/conect.php';
+include __DIR__ . '/../includes/funciones.php';
 
 try {
 
@@ -59,7 +59,7 @@ for( $i=0 ; $i < $total_count ; $i++ ) {
 }
 
 session_unset();
-header('Location: /../actividades/include/listado.php')	;	 
+header('Location: /../actividades/includes/listado.php')	;	 
 
 
 

@@ -1,12 +1,12 @@
 <?php
 
-define('FPDF_FONTPATH','../font/');
-require('fpdf.php');
+//define('FPDF_FONTPATH','../font/');
+//require('fpdf.php');
 
 
-include __DIR__ . '/../include/conect.php';
-include __DIR__ . '/../include/funciones.php';
-include __DIR__ . '/../include/clases.php';
+include __DIR__ . '/../includes/conect.php';
+include __DIR__ . '/../includes/funciones.php';
+include __DIR__ . '/../includes/clases.php';
 
 $query = $pdo->prepare('call `saltaped_actividades-promo`.paraInfPdf('.$_GET['id'].');');
     	$query->execute();
@@ -24,7 +24,7 @@ $archivo_pdf=$actiPdf['titulo']. '.pdf';
 
 
 $pdf=new PDF();
-$pdf->Open();
+// $pdf->Open();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',12);
 $pdf->Cell(0,7,utf8_decode('Actividad: '.$actiPdf['titulo']),0,0);
@@ -74,5 +74,6 @@ $pdf->SetFont('Arial','',12);
 $pdf->Cell(0,7,utf8_decode('Referente: '.$actiPdf['referente']),0,0);
 
 }
-$pdf->Output($archivo_pdf,'I');
+//$pdf->Output($archivo_pdf,'I');
+$pdf->Output('D', $archivo_pdf);
 ?>

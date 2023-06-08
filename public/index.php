@@ -1,7 +1,7 @@
 <?php
 
 
-include __DIR__ . '/../include/conect.php';
+include __DIR__ . '/../includes/conect.php';
 
 
 session_start();
@@ -94,7 +94,7 @@ session_start();
 
 					
 
-						header('Location: /actividades/include/inicio.php');
+						header('Location: /actividades/includes/inicio.php');
 
 						
 

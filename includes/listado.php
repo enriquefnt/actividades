@@ -1,6 +1,6 @@
 <?php  
-include __DIR__ . '/../include/conect.php';
-include __DIR__ . '/../include/funciones.php';
+include __DIR__ . '/../includes/conect.php';
+include __DIR__ . '/../includes/funciones.php';
 ?>
 
 	<?php

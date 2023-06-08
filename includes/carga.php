@@ -65,7 +65,7 @@ for( $i=0 ; $i < $total_count ; $i++ ) {
 print_r($datosImagen);
 
 session_unset();
-header('Location: /../actividades/include/carga.php')	;	 
+header('Location: /../actividades/includes/carga.php')	;	 
 
 }
 

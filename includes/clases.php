@@ -1,5 +1,5 @@
 <?php	
-
+require('fpdf.php');
 
 function hex2dec($couleur = "#000000"){
 	$R = substr($couleur, 1, 2);
@@ -29,7 +29,7 @@ function txtentities($html){
 
 ///////////////////////////////////////////////////////
 
-class PDF extends FPDF
+class PDF extends fpdf
 {protected $B;
 protected $I;
 protected $U;
@@ -88,7 +88,7 @@ function Footer()
 	$this->SetTextColor(0,50,50);
 	//Page number
 	//$this->Cell(0,10,utf8_decode('Página ').$this->PageNo(),0,0,'C');
-     $this->Cell(0,10,utf8_decode('SNyAS - 2022'),0,0,'C');
+     $this->Cell(0,10,utf8_decode('SNyAS -  2023'),0,0,'C');
 }
 /*
 function ChapterTitle($num,$label)

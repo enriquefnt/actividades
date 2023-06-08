@@ -88,17 +88,17 @@
 <div class="w3-bar w3-border w3-light-grey">
 
 
-  		<a href="../include/inicio.php" class="w3-bar-item w3-button">Instructivo</a>
-		<a href="../include/carga.php"class="w3-bar-item w3-button">Carga Actividades</a>
+  		<a href="../includes/inicio.php" class="w3-bar-item w3-button">Instructivo</a>
+		<a href="../includes/carga.php"class="w3-bar-item w3-button">Carga Actividades</a>
 
 <?php 
 	if(isset($_SESSION['nombre']) && ($_SESSION['tipo']==1)) { ;?>
-	<a href="../include/registro_usuarios.php"class="w3-bar-item w3-button ">Registar Usuario</a></li>
-	<a href="../include/tabla_aop.php"class="w3-bar-item w3-button ">Ver por AOP</a></li>
+	<a href="../includes/registro_usuarios.php"class="w3-bar-item w3-button ">Registar Usuario</a></li>
+	<a href="../includes/tabla_aop.php"class="w3-bar-item w3-button ">Ver por AOP</a></li>
 	<?php } ?>
 	
-	<a href="../include/listado.php"class="w3-bar-item w3-button">Listado</a>
-	<a href="../include/logout.php"class="w3-bar-item w3-button ">Salir</a></li>
+	<a href="../includes/listado.php"class="w3-bar-item w3-button">Listado</a>
+	<a href="../includes/logout.php"class="w3-bar-item w3-button ">Salir</a></li>
 	
 </div>
 </div>
@@ -132,5 +132,5 @@
 </div>
 </div>
 </body>
-<script src="../include/datatable.js"> </script>
+<script src="../includes/datatable.js"> </script>
 </html>
