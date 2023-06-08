@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
 $sql='call fotosActividad('.$_GET["id"].');';
 
 $imagenesActividad = $pdo->query($sql);
-$totalImagenes = $imagenesActividad->rowCount();
+
 
 }
 
