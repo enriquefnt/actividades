@@ -1,6 +1,4 @@
 <?php
-//if (empty($_SESSION['name']))
-//{session_start();}
 session_start();
 ?>
     <table id="registros-table"  class="table">
@@ -25,12 +23,11 @@ session_start();
     </table>
 
 
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/v/bs4/dt-1.11.2/datatables.min.js"></script>
-    <script>
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/v/bs4/dt-1.11.2/datatables.min.js"></script> -->
+    <script> 
         $(document).ready(function() {
             $('#registros-table').DataTable();
         });
     </script>
+

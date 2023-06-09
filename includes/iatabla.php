@@ -1,11 +1,12 @@
 <?php
 include __DIR__ . '/conect.php';
 include __DIR__ . '/funciones.php';
-
+$title = 'Tabla';
 try {
 
-$query = "SELECT DATE_FORMAT(inicio, '%Y-%m') AS mes, aop, COUNT(*) AS cantidad
+$query = "SELECT DATE_FORMAT(inicio, '%Y-%m') AS mes, areaoperativa, COUNT(*) AS cantidad
  FROM act_actividad
+ inner join act_aop on aop =idaop
  GROUP BY mes, aop";
 $result = $pdo->query($query);
 
@@ -14,7 +15,7 @@ $data = array();
 $meses = array();
 
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    $lugar = $row['aop'];
+    $lugar = $row['areaoperativa'];
     $mes = $row['mes'];
     $cantidad = $row['cantidad'];
 
@@ -47,46 +48,3 @@ catch (PDOException $e) {
 include  __DIR__ . '/../templates/layout.html.php';
 ?>
 
-
-
-
-
-
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.2/datatables.min.css"/>
-</head>
-<body>
-    <table id="registros-table" class="table">
-        <thead>
-            <tr>
-                <th>Lugar</th>
-                <?php foreach ($meses as $mes) { ?>
-                    <th><?php echo $mes; ?></th>
-                <?php } ?>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($data as $lugar => $mesesData) { ?>
-                <tr>
-                    <td><?php echo $lugar; ?></td>
-                    <?php foreach ($meses as $mes) { ?>
-                        <td><?php echo isset($mesesData[$mes]) ? $mesesData[$mes] : 0; ?></td>
-                    <?php } ?>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/v/bs4/dt-1.11.2/datatables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#registros-table').DataTable();
-        });
-    </script>
-</body>
-</html>
--->
